@@ -1,0 +1,155 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"layout": {
+			"contentSize": "88rem",
+			"wideSize": "88rem"
+		},
+		"color": {
+			"defaultPalette": false,
+			"palette": [
+				{
+					"name": "Orange",
+					"slug": "orange",
+					"color": "#EA7125"
+				},
+				{
+					"name": "Yellow",
+					"slug": "yellow",
+					"color": "#fecb00"
+				},
+				{
+					"name": "Beige",
+					"slug": "beige",
+					"color": "#fff9f0"
+				},
+				{
+					"name": "Black",
+					"slug": "black",
+					"color": "#000000"
+				},
+				{
+					"name": "Cyan bluish gray",
+					"slug": "cyan-bluish-gray",
+					"color": "#abb8c3"
+				},
+				{
+					"name": "White",
+					"slug": "white",
+					"color": "#ffffff"
+				},
+				{
+					"name": "Pale pink",
+					"slug": "pale-pink",
+					"color": "#f78da7"
+				},
+				{
+					"name": "Vivid red",
+					"slug": "vivid-red",
+					"color": "#cf2e2e"
+				},
+				{
+					"name": "Luminous vivid orange",
+					"slug": "luminous-vivid-orange",
+					"color": "#ff6900"
+				},
+				{
+					"name": "Luminous vivid amber",
+					"slug": "luminous-vivid-amber",
+					"color": "#fcb900"
+				},
+				{
+					"name": "Light green cyan",
+					"slug": "light-green-cyan",
+					"color": "#7bdcb5"
+				},
+				{
+					"name": "Vivid green cyan",
+					"slug": "vivid-green-cyan",
+					"color": "#00d084"
+				},
+				{
+					"name": "Pale cyan blue",
+					"slug": "pale-cyan-blue",
+					"color": "#8ed1fc"
+				},
+				{
+					"name": "Vivid cyan blue",
+					"slug": "vivid-cyan-blue",
+					"color": "#0693e3"
+				},
+				{
+					"name": "Vivid purple",
+					"slug": "vivid-purple",
+					"color": "#9b51e0"
+				}
+			]
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"spacingSizes": [
+				{
+					"name": "1",
+					"slug": "20",
+					"size": "0.44rem"
+				},
+				{
+					"name": "2",
+					"slug": "30",
+					"size": "0.67rem"
+				},
+				{
+					"name": "3",
+					"slug": "40",
+					"size": "1rem"
+				},
+				{
+					"name": "4",
+					"slug": "50",
+					"size": "1.5rem"
+				},
+				{
+					"name": "5",
+					"slug": "60",
+					"size": "2.25rem"
+				},
+				{
+					"name": "6",
+					"slug": "70",
+					"size": "3.38rem"
+				},
+				{
+					"name": "7",
+					"slug": "80",
+					"size": "5.06rem"
+				}
+			]
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"fontSizes": [
+				{
+					"name": "Small",
+					"slug": "small",
+					"size": "13px"
+				},
+				{
+					"name": "Medium",
+					"slug": "medium",
+					"size": "20px"
+				},
+				{
+					"name": "Large",
+					"slug": "large",
+					"size": "36px"
+				},
+				{
+					"name": "Extra Large",
+					"slug": "x-large",
+					"size": "42px"
+				}
+			]
+		}
+	}
+}

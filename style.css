@@ -1,0 +1,188 @@
+/*
+
+Theme Name: Arc of Opportunity
+Theme URI: https://www.arcofopportunity.org/
+Description: Arc is a child theme of donexa, created by Stirling Brandworks
+Author: Stirling Brandworks
+Author URI: https://stirlingbrandworks.com/
+Template: donexa
+Version: 1.0.1
+Text Domain: arc-of-opportunity
+*/
+
+body{
+	position: relative;
+}
+
+body::before{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 20rem;
+	background-color: #fff9f0;
+	z-index: -1;
+	border-bottom-left-radius: 3rem;
+	border-bottom-right-radius: 3rem;
+}
+
+@media (min-width: 768px) {
+	body::before{
+		border-bottom-left-radius: 6rem;
+		border-bottom-right-radius: 6rem;
+	}
+}
+
+@media (min-width: 981px) {
+	body::before{
+		border-bottom-left-radius: 10rem;
+		border-bottom-right-radius: 10rem;
+	}
+}
+
+/*Remove padding top from main content*/
+.content-area .site-main{
+	padding-top: 0;
+}
+
+
+/*Min Height on content sections*/
+.site-content,
+.site-main{
+	min-height: 30rem;
+}
+
+:root,
+.elementor-kit-5,
+.elementor-kit-6,
+.elementor-kit-7 {
+	--e-global-border-radius: 0.5rem;
+}
+
+.pt-button.pt-button-flat{
+    border-radius: var(--e-global-border-radius) !important;
+}
+
+/*Add margin bottom to headings in content*/
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.pt-blog-contain h1,
+.pt-blog-contain h2,
+.pt-blog-contain h3,
+.pt-blog-contain h4,
+.pt-blog-contain h5,
+.pt-blog-contain h6 {
+    margin-bottom: 1rem !important;
+}
+
+/* Single post: no sidebar, content centered */
+@media (min-width: 1200px) {
+.single-post .acr-single-post {
+		max-width: 60rem !important;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/* Post meta: byline + category pill */
+.pt-blog-post .pt-blog-contain .pt-post-meta {
+	margin-bottom: 1.5rem;
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta ul,
+.pt-blog-post .pt-blog-contain .pt-post-meta ul li,
+.pt-blog-post .pt-blog-contain .pt-post-meta ul li a,
+.pt-blog-post .pt-blog-contain .pt-post-meta .acr-byline-by {
+	font-family: var(--e-global-typography-primary-font-family) !important;
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 0.85rem;
+	font-size: 0.9375rem;
+	line-height: 1.4;
+	color: #555;
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta ul li {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	text-align: left;
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta ul li i {
+	color: var(--wp--preset--color--orange, #EA7125);
+	font-size: 0.8em;
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta .acr-byline-by {
+	font-weight: 500;
+	color: #555;
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta .pt-post-author::after {
+	content: "·";
+	margin-left: 0.15rem;
+	color: rgba(17, 17, 17, 0.35);
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta .pt-post-date a {
+	color: #555;
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta .pt-post-date a:hover {
+	color: var(--wp--preset--color--orange, #EA7125);
+	text-decoration: none !important;
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta .pt-post-category {
+	margin-left: auto;
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta .pt-post-category a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	background: var(--wp--preset--color--beige, #fff9f0);
+	color: var(--wp--preset--color--orange, #EA7125);
+	border-radius: var(--e-global-border-radius, 0.5rem);
+	padding: 0.4rem 0.8rem;
+	font-weight: 500;
+	line-height: 1;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta .pt-post-category a i {
+	color: inherit;
+}
+
+.pt-blog-post .pt-blog-contain .pt-post-meta .pt-post-category a:hover {
+	background: var(--wp--preset--color--yellow, #fecb00);
+	color: #111;
+	text-decoration: none !important;
+}
+
+@media (max-width: 575px) {
+	.pt-blog-post .pt-blog-contain .pt-post-meta .pt-post-category {
+		margin-left: 0;
+		flex-basis: 100%;
+	}
+
+	.pt-blog-post .pt-blog-contain .pt-post-meta .pt-post-author::after {
+		display: none;
+	}
+}
