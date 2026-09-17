@@ -16,11 +16,50 @@ function child_enqueue__parent_scripts() {
 add_action( 'wp_enqueue_scripts', 'child_enqueue__parent_scripts', 100 );
 
 add_filter( 'body_class', function( $classes ) {
-	if ( is_singular( 'post' ) ) {
+	if ( is_singular( array( 'post', 'event_listing' ) ) ) {
 		$classes = array_values( array_diff( $classes, array( 'has-sidebar' ) ) );
 	}
 	return $classes;
 }, 20 );
+
+/**
+ * Hide the Register for event button unless a registration email or URL is set.
+ */
+function acr_event_has_registration_contact( $post = null ) {
+	$post = get_post( $post );
+
+	if ( ! $post || 'event_listing' !== $post->post_type ) {
+		return false;
+	}
+
+	$registration = get_post_meta( $post->ID, '_registration', true );
+
+	return '' !== trim( (string) $registration );
+}
+
+add_filter( 'wpem_get_event_registration_method', function( $method, $post ) {
+	if ( ! acr_event_has_registration_contact( $post ) ) {
+		return false;
+	}
+
+	return $method;
+}, 10, 2 );
+
+add_filter( 'wpem_display_event_registration_method', function( $method, $post ) {
+	if ( ! acr_event_has_registration_contact( $post ) ) {
+		return false;
+	}
+
+	return $method;
+}, 10, 2 );
+
+add_filter( 'event_manager_registration_addon_form', function( $show ) {
+	if ( is_singular( 'event_listing' ) && ! acr_event_has_registration_contact() ) {
+		return false;
+	}
+
+	return $show;
+} );
 
 add_filter( 'acf/load_field/key=field_ATaJj057m', function( $field ) {
 	$field['choices']['default'] = 'Default';

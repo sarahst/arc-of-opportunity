@@ -6,7 +6,7 @@ Description: Arc is a child theme of donexa, created by Stirling Brandworks
 Author: Stirling Brandworks
 Author URI: https://stirlingbrandworks.com/
 Template: donexa
-Version: 1.0.1
+Version: 1.0.3
 Text Domain: arc-of-opportunity
 */
 
@@ -189,10 +189,23 @@ body::before{
 	font-family: 'Georgia', serif !important;
 }
 
+/* Single event: hide leftover blog chrome if a post template is still used */
+.single-event_listing .pt-post-meta,
+.single-event_listing .pt-single-post-navigation,
+.single-event_listing .pt-single-post-usernav,
+.single-event_listing .wpem-viewed-event {
+	display: none !important;
+}
+
 /*Hide Eyebrow Dash*/
 .pt-section-title .pt-title .pt-title-subtitle{
 	padding-left: 0 !important;
 }
 .pt-section-title .pt-title .pt-title-subtitle::before{
 	display: none !important;
+}
+
+/*Single Event*/
+.single_event_listing{
+	padding-top: 3rem;
 }
