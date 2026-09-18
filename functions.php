@@ -61,6 +61,36 @@ add_filter( 'event_manager_registration_addon_form', function( $show ) {
 	return $show;
 } );
 
+/**
+ * Use the theme event placeholder when an event has no banner or thumbnail.
+ */
+function acr_get_event_placeholder_image() {
+	return get_stylesheet_directory_uri() . '/images/event-placeholder.png';
+}
+
+function acr_replace_plugin_event_placeholder( $url ) {
+	$placeholder = acr_get_event_placeholder_image();
+
+	if ( empty( $url ) ) {
+		return $placeholder;
+	}
+
+	if ( is_array( $url ) ) {
+		return array_map( 'acr_replace_plugin_event_placeholder', $url );
+	}
+
+	if ( is_string( $url ) && false !== strpos( $url, 'wpem-placeholder' ) ) {
+		return $placeholder;
+	}
+
+	return $url;
+}
+
+add_filter( 'event_manager_default_event_banner', 'acr_get_event_placeholder_image' );
+add_filter( 'event_manager_default_event_thumbnail', 'acr_get_event_placeholder_image' );
+add_filter( 'wpem_display_event_banner', 'acr_replace_plugin_event_placeholder' );
+add_filter( 'wpem_display_event_thumbnail', 'acr_replace_plugin_event_placeholder' );
+
 add_filter( 'acf/load_field/key=field_ATaJj057m', function( $field ) {
 	$field['choices']['default'] = 'Default';
 	return $field;
